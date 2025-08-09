@@ -27,7 +27,7 @@ function addTranction(event) {
     p2.textContent = `$${amount.value}`;
   }
   let img = document.createElement("i");
-  img.classList.add("fa-solid", "fa-trash");
+  img.classList.add("fa-solid", "fa-trash", "image");
   p2.classList.add("amt");
 
   let newDiv = document.createElement("div");
@@ -59,4 +59,35 @@ function addTranction(event) {
 
   description.value = "";
   amount.value = "";
+}
+
+left.addEventListener("click", (event) => {
+  if (event.target.classList.contains("fa-trash")) {
+    const card = event.target.parentNode.parentNode;
+    if (card.classList.contains("details")) {
+      card.remove();
+      updateAmounts();
+    }
+  }
+});
+
+function updateAmounts() {
+  let incomeAmtNum = 0;
+  let expenseAmtNum = 0;
+
+  let transactionAmt = document.querySelectorAll(".amt");
+
+  transactionAmt.forEach((tAmt) => {
+    let value = Number(tAmt.textContent.replace("$", ""));
+
+    if (value < 0) {
+      expenseAmtNum += value;
+    } else {
+      incomeAmtNum += value;
+    }
+  });
+
+  document.querySelector(".incomeamt").textContent = incomeAmtNum;
+  document.querySelector(".expenseamt").textContent = expenseAmtNum;
+  document.querySelector(".tamount").textContent = incomeAmtNum + expenseAmtNum;
 }
