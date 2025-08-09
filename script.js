@@ -52,9 +52,9 @@ function addTranction(event) {
     } else {
       incomeAmtNum += value;
     }
-    incomeAmt.textContent = incomeAmtNum;
-    expenseAmt.textContent = expenseAmtNum;
-    totalAmt.textContent = incomeAmtNum + expenseAmtNum;
+    incomeAmt.textContent = `$${incomeAmtNum}`;
+    expenseAmt.textContent = `$${Math.abs(expenseAmtNum)}`;
+    totalAmt.textContent = `$${incomeAmtNum + expenseAmtNum}`;
   });
 
   description.value = "";
