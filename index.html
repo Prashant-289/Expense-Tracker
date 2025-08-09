@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,16 +17,16 @@
         <div class="balance">
             <div class="info">
                 <p>Your Balance</p>
-                <h1 class="amount">$Amount</h1>
+                <h1 class="tamount">0</h1>
             </div>
             <div class="compare">
                 <div class="box">
                     <p>Income</p>
-                    <h2 class="incomeamt">Amount</h2>
+                    <h2 class="incomeamt">0</h2>
                 </div>
                 <div class="box">
                     <p>Expense</p>
-                    <h2 class="expenseamt">Amount</h2>
+                    <h2 class="expenseamt">0</h2>
                 </div>
             </div>
         </div>
@@ -34,7 +35,10 @@
                 <h2>Transactions</h2>
                 <div class="details">
                     <p class="name">Amount Paid</p>
-                    <p class="amt">$3637.273</p>
+                    <div class="deleteicon">
+                        <p class="amt">$3637.273</p>
+                        <i class="fa-solid fa-trash image"></i>
+                    </div>
                 </div>
             </div>
             <div class="right">
